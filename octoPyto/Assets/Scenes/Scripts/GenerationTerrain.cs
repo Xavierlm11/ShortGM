@@ -43,30 +43,32 @@ public class GenerationTerrain : MonoBehaviour
 
             for (int j = 0; j < width; j++) //j=x
             {
-                if (i!=0 || layerf)
+                if (i!=0 && layerf)
                 {
-                    if (left)
-                    {
-                        if (j < rockDis)
+                    
+                        if (left)
                         {
-                            SpawnerLeft(baseRock, j, i);
+                            if (j < rockDis)
+                            {
+                                SpawnerLeft(baseRock, j, i);
+                            }
+                            else
+                            {
+                                SpawnerLeft(deepRock, j, i);
+                            }
                         }
                         else
                         {
-                            SpawnerLeft(deepRock, j, i);
-                        }
-                    }
-                    else
-                    {
-                        if (j < rockDis)
-                        {
-                            SpawnerRight(baseRock, j, i);
-                        }
-                        else
-                        {
-                            SpawnerRight(deepRock, j, i);
-                        }
-                    } 
+                            if (j < rockDis)
+                            {
+                                SpawnerRight(baseRock, j, i);
+                            }
+                            else
+                            {
+                                SpawnerRight(deepRock, j, i);
+                            }
+                        }  
+                    
                 }
                 else
                 {
